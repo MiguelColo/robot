@@ -1,4 +1,5 @@
-/* Primero se genera el objeto, rover, donde se le asignan las propiedades de direction,coordenadas x e y y posteriormente se le añade travelLog, que nos dará el recorrido que realiza rover.*/
+/* Primero se genera el objeto, rover, donde se le asignan las propiedades de direction,coordenadas x e y y posteriormente 
+se le añade travelLog, que nos dará el recorrido que realiza rover.*/
 
 var rover = {
     direction:"N",
@@ -7,7 +8,8 @@ var rover = {
     travelLog: []
 }
 
-/* A continuación se crean las variables turnleft y turnright,que en función de la variable direction,nos darán una direccción final según se hay realizado el giro a un lado u otro.*/
+/* A continuación se crean las variables turnleft y turnright,que en función de la variable direction,nos darán una 
+direccción final según se hay realizado el giro a un lado u otro.*/
 
 function turnright(rover) {
     switch (rover.direction) {
@@ -50,7 +52,9 @@ function turnleft(rover) {
     console.log(rover.direction);
 }
 
-/* La siguiente función moveForward, generará el equivalente a un movimiento hacia adelante en la dirección en la que esté orientado Rover. Se tendrán en cuenta una serie de límites para cada una de las orientaciones, marcando el espacio en una malla de 10x10,y dando un aviso en el caso de superar estos límites.*/ 
+/* La siguiente función moveForward, generará el equivalente a un movimiento hacia adelante en la dirección en la 
+que esté orientado Rover. Se tendrán en cuenta una serie de límites para cada una de las orientaciones, 
+marcando el espacio en una malla de 10x10,y dando un aviso en el caso de superar estos límites.*/ 
 
 function moveForward(rover){
    switch(rover.direction){
@@ -103,9 +107,12 @@ function moveForward(rover){
         }  
 }
 
-/* La función Commnands, hará una llamadas a las funciones generadas anteriormente de manera automática leyendo una cadena de valores que indicarán a cual de las mismas se está llamando.
-Vemos que aparece la opcion de llamar a la opción moveBackforward, la cual está generada más adelante,que funcionará de igual manera que moveForward,pero en este caso el movimiento en vez de hacia 
-adelante será hacia atras. La función Commands,solo se hará efectiva con los parametros indicados, no siendo llamada ninguna función con un parametro diferente  */
+/* La función Commnands, hará una llamadas a las funciones generadas anteriormente de manera automática leyendo una cadena de
+valores que indicarán a cual de las mismas se está llamando.
+Vemos que aparece la opcion de llamar a la opción moveBackforward, la cual está generada más adelante,que funcionará de igual
+manera que moveForward,pero en este caso el movimiento en vez de hacia adelante será hacia atras. 
+La función Commands,solo se hará efectiva con los parametros indicados, no siendo llamada ninguna función con
+un parametro diferente  */
 
 function Commands(list){
   for(var i = 0; i < list.length; i++){
@@ -126,13 +133,15 @@ function Commands(list){
     }
   }
 }
-/* La función track nos daŕa la trayectoria que ha realizado Rover desde la coordenada inicial hasta el último movimiento generado por alguna de las funciones.*/
+/* La función track nos daŕa la trayectoria que ha realizado Rover desde la coordenada inicial hasta el último movimiento 
+generado por alguna de las funciones.*/
 
 function track(rover){
     console.log(rover.travelLog);
 }
 
-/*Como ya se ha mencionado anteriormente,esta función será similar a moveForward,pero con un movimiento hacia atras en función de la dirección que tenga en ese momento Rover y considerando los límites de la malla marcados.*/
+/*Como ya se ha mencionado anteriormente,esta función será similar a moveForward,pero con un movimiento hacia atras
+en función de la dirección que tenga en ese momento Rover y considerando los límites de la malla marcados.*/
 
 function moveBackforward(rover){
    switch(rover.direction){
@@ -185,7 +194,8 @@ function moveBackforward(rover){
         } 
 }
 
-/* Esta función de reset, aunque no se pide en el ejercicio, se ha creado para reiniciar los valores iniciales de posición y orientación del robot */
+/* Esta función de reset, aunque no se pide en el ejercicio, se ha creado para reiniciar los valores iniciales 
+de posición y orientación del robot */
 
 function reset(rover){
     rover.x=0;
@@ -195,7 +205,10 @@ function reset(rover){
 }
 
 
-/* A partir de esta línea de comando generamos un robot diferente,rover2, al que le damos las mismas características y funciones que a rover, cambiando unicamente su posición inicial. A partir de ahí y en una cadena de movimientos alternativos de ambos robots, se le añade, tanto a rover2 como a rover, un aviso de que si se encuentran en la misma coordenada chocarán y por lo tanto el robot deshará el último paso realizado.*/
+/* A partir de esta línea de comando generamos un robot diferente,rover2, al que le damos las mismas características y
+funciones que a rover, cambiando unicamente su posición inicial.
+A partir de ahí y en una cadena de movimientos alternativos de ambos robots, se le añade, tanto a rover2 como a rover,
+un aviso de que si se encuentran en la misma coordenada chocarán y por lo tanto el robot deshará el último paso realizado.*/
 
  var rover2={
      direction:"N",
@@ -378,7 +391,9 @@ function reset2(rover2){
     rover2.travelLog=[];
 }
 
-/* A continuación se genera una matriz de valores que indicarán esa malla de 10x10,y a la cual se le añaden una serie de "obstaculos"(obstacles). Se realiza un rastreo de la malla y allá donde se encuentra uno de estos obstacles, se avisa al usuario de que cambie la dirección y mueva de nuevo al robot.*/
+/* A continuación se genera una matriz de valores que indicarán esa malla de 10x10,y a la cual se le añaden una serie de 
+"obstaculos"(obstacles). Se realiza un rastreo de la malla y allá donde se encuentra uno de estos obstacles, 
+se avisa al usuario de que cambie la dirección y mueva de nuevo al robot.*/
 
 var obstacles = [
 [null, null, null, null, null, null,null, null, null, null],
